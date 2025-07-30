@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PortfolioWebApp.API\PortfolioWebApp.API.csproj" />
+    <ProjectReference Include="..\PortfolioWebApp.Application\PortfolioWebApp.Application\PortfolioWebApp.Application.csproj" />
+    <ProjectReference Include="..\PortfolioWebApp.Domain\PortfolioWebApp.Domain\PortfolioWebApp.Domain.csproj" />
+    <ProjectReference Include="..\PortfolioWebApp.Infrastructure\PortfolioWebApp.Infrastructure\PortfolioWebApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
