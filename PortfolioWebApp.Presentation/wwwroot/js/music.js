@@ -3,6 +3,7 @@
     audio_controls.children().remove();
     let new_song = $(document.createElement("audio"));
     new_song.attr("controls", "controls").attr("preload", "auto").attr("src", url).attr("type", "audio/mp3").attr("autoplay", "autoplay").on("ended", load_next_song);
+    new_song[0].volume = 0.5;
     new_song.appendTo(audio_controls);
 }
 
