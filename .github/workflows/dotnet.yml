@@ -4,13 +4,7 @@
 name: Unit Tests
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'PortfolioWebApp.**'
-      - '!PortfolioWebApp.UnitTest/**'
   pull_request:
-    branches: [ "main" ]
     paths:
       - 'PortfolioWebApp.**'
       - '!PortfolioWebApp.UnitTest/**'
