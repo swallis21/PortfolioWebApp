@@ -29,6 +29,9 @@
     <Content Include=".platform\hooks\postdeploy\00_get_certificate.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Procfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
