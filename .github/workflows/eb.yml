@@ -6,13 +6,6 @@ on:
     paths:
       - 'PortfolioWebApp.**'
       - '!PortfolioWebApp.UnitTest/**'
-  pull_request:
-    branches: [ "main" ]
-    types:
-      - closed
-    paths:
-      - 'PortfolioWebApp.**'
-      - '!PortfolioWebApp.UnitTest/**'
       
 env:
   PROJECT_LOCATION: PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
