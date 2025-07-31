@@ -4,8 +4,9 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
-
+    types:
+      - closed
+      
 env:
   PROJECT_LOCATION: PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
   ELASTIC_BEANSTALK_NAME: Portfolio
@@ -13,7 +14,7 @@ env:
 
 jobs:
   build:
-
+    if: github.event_name == "push" || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
