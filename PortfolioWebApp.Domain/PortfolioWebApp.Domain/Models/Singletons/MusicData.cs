@@ -47,7 +47,6 @@ public class MusicData
 
     public async Task<Song> GetSong()
     {
-        Debug.WriteLine(_CurrentSong.Current.URL);
         return await Task.FromResult(_CurrentSong.Current);
     }
 
