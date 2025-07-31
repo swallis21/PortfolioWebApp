@@ -14,6 +14,7 @@ public sealed class MusicAPI
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
+    private readonly MusicData _musicData;
     public MusicAPI()
     {
         var services = new ServiceCollection();
@@ -21,30 +22,30 @@ public sealed class MusicAPI
         var serviceProvider = DependencyInjection.AddServices(services).BuildServiceProvider();
         _mediator = serviceProvider.GetRequiredService<IMediator>();
         _mapper = serviceProvider.GetRequiredService<IMapper>();
+        _musicData = serviceProvider.GetRequiredService<MusicData>();
     }
 
     [TestMethod]
     public async Task GetSong()
     {
-        MusicData data = new MusicData();
-        Assert.IsInstanceOfType<Song>(await data.GetSong());
+        Assert.IsInstanceOfType<Song>(await _musicData.GetSong());
     }
 
     [TestMethod]
+    [DoNotParallelize]
     public async Task GetNextSongQuery()
     {
-        MusicData data = new MusicData();
         SongVM songVM = await _mediator.Send(new GetNextSongQuery());
         Assert.IsInstanceOfType<SongVM>(songVM);
-        Assert.AreEqual((await data.GetSong()).URL, songVM.URL);
+        Assert.AreEqual((await _musicData.GetSong()).URL, songVM.URL);
     }
 
     [TestMethod]
+    [DoNotParallelize]
     public async Task GetRandomSongQuery()
     {
-        MusicData data = new MusicData();
         SongVM songVM = await _mediator.Send(new GetRandomSongQuery());
         Assert.IsInstanceOfType<SongVM>(songVM);
-        Assert.AreEqual((await data.GetSong()).URL, songVM.URL);
+        Assert.AreEqual((await _musicData.GetSong()).URL, songVM.URL);
     }
 }
