@@ -3,9 +3,16 @@ name: Deploy to Elastic Beanstalk
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'PortfolioWebApp.**'
+      - '!PortfolioWebApp.UnitTest/**'
   pull_request:
+    branches: [ "main" ]
     types:
       - closed
+    paths:
+      - 'PortfolioWebApp.**'
+      - '!PortfolioWebApp.UnitTest/**'
       
 env:
   PROJECT_LOCATION: PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
