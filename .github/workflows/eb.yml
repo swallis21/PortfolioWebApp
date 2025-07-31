@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_LOCATION: PortfolioWebApp/PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
+  PROJECT_LOCATION: PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
   ELASTIC_BEANSTALK_NAME: Portfolio
   ELASTIC_BEANSTALK_ENV_NAME: Portfolio-env
 
