@@ -3,17 +3,25 @@ name: Deploy to Elastic Beanstalk
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'PortfolioWebApp.**'
+      - '!PortfolioWebApp.UnitTest/**'
   pull_request:
     branches: [ "main" ]
-
+    types:
+      - closed
+    paths:
+      - 'PortfolioWebApp.**'
+      - '!PortfolioWebApp.UnitTest/**'
+      
 env:
-  PROJECT_LOCATION: PortfolioWebApp/PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
+  PROJECT_LOCATION: PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
   ELASTIC_BEANSTALK_NAME: Portfolio
   ELASTIC_BEANSTALK_ENV_NAME: Portfolio-env
 
 jobs:
   build:
-
+    if: github.event_name == 'push' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +29,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
     - name: Restore dependencies
       run: dotnet restore $PROJECT_LOCATION
     - name: Build
