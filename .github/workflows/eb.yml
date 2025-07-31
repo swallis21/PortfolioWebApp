@@ -7,9 +7,9 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_LOCATION: dotnet-mvc/dotnet-mvc.csproj
-  ELASTIC_BEANSTALK_NAME: dotnet-linux
-  ELASTIC_BEANSTALK_ENV_NAME: Dotnet-linux-env
+  PROJECT_LOCATION: PortfolioWebApp/PortfolioWebApp.Presentation/PortfolioWebApp.Presentation.csproj
+  ELASTIC_BEANSTALK_NAME: Portfolio
+  ELASTIC_BEANSTALK_ENV_NAME: Portfolio-env
 
 jobs:
   build:
