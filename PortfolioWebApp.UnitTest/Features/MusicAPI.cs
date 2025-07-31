@@ -32,6 +32,7 @@ public sealed class MusicAPI
     }
 
     [TestMethod]
+    [DoNotParallelize]
     public async Task GetNextSongQuery()
     {
         SongVM songVM = await _mediator.Send(new GetNextSongQuery());
@@ -40,6 +41,7 @@ public sealed class MusicAPI
     }
 
     [TestMethod]
+    [DoNotParallelize]
     public async Task GetRandomSongQuery()
     {
         SongVM songVM = await _mediator.Send(new GetRandomSongQuery());
