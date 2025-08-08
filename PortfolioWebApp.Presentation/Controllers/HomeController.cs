@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using PortfolioWebApp.Presentation.Attributes;
 using PortfolioWebApp.Presentation.Models;
 using System.Diagnostics;
 
@@ -13,7 +14,20 @@ namespace PortfolioWebApp.Presentation.Controllers
             _logger = logger;
         }
 
+        [VirtualDom]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [VirtualDom]
+        public IActionResult Career()
+        {
+            return View();
+        }
+
+        [VirtualDom]
+        public IActionResult About()
         {
             return View();
         }
