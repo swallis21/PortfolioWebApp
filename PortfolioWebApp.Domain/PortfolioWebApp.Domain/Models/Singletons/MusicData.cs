@@ -30,6 +30,12 @@ public class MusicData
             },
             new Song
             {
+                URL = "/music/Ratatat - Mirando.mp3",
+                Artist = "Ratatat",
+                Title = "Mirando"
+            },
+            new Song
+            {
                 URL = "/music/Emancipator - First Snow.mp3",
                 Artist = "Emancipator",
                 Title = "First Snow"
@@ -39,6 +45,12 @@ public class MusicData
                 URL = "/music/Phantogram - Feedback Invisible.mp3",
                 Artist = "Phantogram",
                 Title = "Feedback Invisible"
+            },
+            new Song
+            {
+                URL = "/music/The Crystal Method - Trip Like I Do.mp3",
+                Artist = "The Crystal Method",
+                Title = "Trip Like I Do"
             }
         };
         _CurrentSong = _Songs.GetEnumerator();
